@@ -24,6 +24,7 @@ Macintosh machines with the Firefox browser or Windows machines with the Interne
 	# $browser = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0";
 	$address = $_SERVER['REMOTE_ADDR'];
 if (preg_match("/^(\d+)\./", $address, $matches)) {
+  /* Hackers coming from 202... addresses */
 	if ($matches[1] != "202") {
 		if (preg_match("/\(Macintosh\b/", $browser)) {		
 			if (preg_match("/Firefox/", $browser)) {	
